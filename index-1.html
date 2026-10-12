@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160d35">
+<title>ClipNova — اصنع مقاطعك القصيرة</title>
+<style>
+:root{--bg:#100a25;--panel:#1c123b;--purple:#8b5cf6;--pink:#ed72ff;--text:#f8f5ff;--muted:#b8afce;--line:#49366f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#38206b 0%,var(--bg) 55%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;min-height:100vh}
+.wrap{max-width:1050px;margin:auto;padding:20px}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 28px}.brand{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:800}.logo{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--purple));font-size:23px;box-shadow:0 6px 25px #8b5cf655}.pill{border:1px solid var(--line);border-radius:999px;padding:9px 14px;color:var(--muted);font-size:13px}
+.hero{text-align:center;padding:40px 0 28px}.eyebrow{color:#d6b8ff;font-size:13px;font-weight:700;letter-spacing:.3px}.hero h1{font-size:clamp(32px,6vw,56px);line-height:1.18;margin:14px auto;max-width:780px}.gradient{background:linear-gradient(90deg,#f2a6ff,#a78bfa,#d7c4ff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:16px;line-height:1.8;max-width:650px;margin:0 auto}
+.panel{background:linear-gradient(160deg,#241746ee,#17102eea);border:1px solid #ffffff20;border-radius:24px;padding:22px;box-shadow:0 22px 70px #0005;margin:22px auto;max-width:850px}.fieldlabel{display:block;margin:0 0 9px;font-weight:700;font-size:14px}.urlrow{display:flex;gap:10px}.urlrow input,.field{width:100%;min-width:0;background:#100a25;border:1px solid var(--line);border-radius:14px;padding:15px;color:white;font:inherit;outline:none}.urlrow input:focus,.field:focus{border-color:var(--purple)}button{border:0;border-radius:14px;padding:14px 20px;background:linear-gradient(135deg,var(--purple),#a855f7);color:white;font:inherit;font-weight:800;cursor:pointer;white-space:nowrap}button:active{transform:scale(.99)}.hint{color:var(--muted);font-size:12px;line-height:1.7;margin:10px 2px 0}.or{display:flex;align-items:center;gap:12px;color:#9388ad;font-size:12px;margin:20px 0}.or:before,.or:after{content:"";height:1px;background:#49366f;flex:1}.upload{border:1px dashed #7f61b8;border-radius:18px;padding:24px;text-align:center;background:#120c29}.upload .emoji{font-size:28px}.upload p{color:var(--muted);margin:7px 0 14px;font-size:14px}.upload input{max-width:100%;color:var(--muted)}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0}.feature{background:#1a1234;border:1px solid #ffffff14;border-radius:18px;padding:18px}.feature b{display:block;margin:9px 0}.feature p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}.icon{font-size:23px}.editor{display:none}.editor.active{display:block}.videoarea{background:#080611;border-radius:16px;padding:12px;text-align:center}.videoarea video{max-width:100%;max-height:430px;border-radius:10px}.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}.actions button.secondary{background:#30204f;border:1px solid #604a8a}.actions button:disabled{opacity:.5;cursor:not-allowed}.status{display:none;padding:12px;border-radius:12px;background:#241746;color:#e6d8ff;font-size:13px;margin-top:12px;line-height:1.6}.status.show{display:block}.footer{text-align:center;color:#81769e;font-size:12px;padding:22px 0 10px}.small{font-size:12px;color:var(--muted);line-height:1.7}
+@media(max-width:650px){.actions{grid-template-columns:1fr}.wrap{padding:14px}.hero{padding-top:24px}.panel{padding:16px}.urlrow{flex-direction:column}.urlrow button{width:100%}.features{grid-template-columns:1fr}.controls{grid-template-columns:1fr}.nav{padding-bottom:12px}.pill{font-size:11px;padding:8px 10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="nav">
+    <div class="brand"><div class="logo">✂</div><span>ClipNova</span></div>
+    <div class="pill">صانع المقاطع القصيرة</div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">✦ حوّل الفيديو الطويل إلى محتوى قصير</div>
+      <h1>لحظاتك الأقوى، في <span class="gradient">مقاطع قصيرة</span></h1>
+      <p>جهّز فيديوهات مناسبة لـ TikTok وReels وYouTube Shorts من مكان واحد. ابدأ برفع فيديو تملك حق استخدامه، ثم عاينه وحدد الجزء الذي تريد قصّه.</p>
+    </section>
+
+    <section class="panel">
+      <label class="fieldlabel" for="videoFile">ابدأ بفيديو من جهازك</label>
+      <div class="upload">
+        <div class="emoji">🎬</div>
+        <p>اختَر فيديو محفوظًا على موبايلك لتجربته داخل المتصفح</p>
+        <input id="videoFile" type="file" accept="video/*">
+      </div>
+      <div class="or">أو الصق رابطًا للرجوع إليه لاحقًا</div>
+      <label class="fieldlabel" for="videoUrl">رابط الفيديو (واجهة تجريبية)</label>
+      <div class="urlrow">
+        <input id="videoUrl" type="url" placeholder="https://...">
+        <button id="checkUrl" type="button">فحص الرابط ←</button>
+      </div>
+      <p class="hint">تنبيه: لصق الرابط هنا لا ينزّل الفيديو تلقائيًا. استخدم الملفات التي تملكها أو لديك إذن باستخدامها. سنضيف تكامل المعالجة التلقائية في مرحلة لاحقة.</p>
+      <div id="status" class="status" role="status"></div>
+    </section>
+
+    <section id="editor" class="panel editor">
+      <h2 style="margin-top:0;font-size:21px">معاينة الفيديو</h2>
+      <div class="videoarea"><video id="preview" controls playsinline></video></div>
+      <div class="controls">
+        <div><label class="fieldlabel" for="start">بداية المقطع (ثانية)</label><input class="field" id="start" type="number" min="0" value="0" step="0.5"></div>
+        <div><label class="fieldlabel" for="end">نهاية المقطع (ثانية)</label><input class="field" id="end" type="number" min="1" value="15" step="0.5"></div>
+      </div>
+      <div class="actions">
+        <button id="playClip" type="button">▶ معاينة المقطع المحدد</button>
+        <button id="jumpStart" class="secondary" type="button">↶ الذهاب للبداية</button>
+        <button id="pauseVideo" class="secondary" type="button">⏸ إيقاف الفيديو</button>
+      </div>
+      <p class="small">تقدر هنا تعاين الجزء الذي اخترته. حفظ مقطع جديد كملف مستقل والقص بالذكاء الاصطناعي يحتاجان محرك معالجة إضافيًا، وده لسه مش موجود في النسخة الحالية.</p>
+    </section>
+
+    <section class="features">
+      <div class="feature"><div class="icon">📱</div><b>مناسب للموبايل</b><p>واجهة عربية سهلة الاستخدام من شاشة الهاتف.</p></div>
+      <div class="feature"><div class="icon">✂️</div><b>اختيار اللحظات</b><p>ابدأ بمعاينة الفيديو وتحديد المدة المطلوبة للمقطع.</p></div>
+      <div class="feature"><div class="icon">✨</div><b>جاهز للتطوير</b><p>تصميم قابل لإضافة الترجمة والقص التلقائي لاحقًا.</p></div>
+    </section>
+  </main>
+  <footer class="footer">ClipNova © 2026 · نسخة أولية قيد التطوير</footer>
+</div>
+<script>
+const fileInput=document.getElementById('videoFile');
+const preview=document.getElementById('preview');
+const editor=document.getElementById('editor');
+const statusBox=document.getElementById('status');
+const startInput=document.getElementById('start');
+const endInput=document.getElementById('end');
+const playClipButton=document.getElementById('playClip');
+let objectUrl=null;
+let clipPlaying=false;
+function showStatus(message){statusBox.textContent=message;statusBox.classList.add('show')}
+function duration(){return Number.isFinite(preview.duration)?preview.duration:0}
+function validRange(){
+  const d=duration();
+  let start=Number(startInput.value), end=Number(endInput.value);
+  if(!Number.isFinite(start)||start<0) start=0;
+  if(!Number.isFinite(end)||end<=start){showStatus('خلّي نهاية المقطع أكبر من وقت البداية.');return null}
+  if(d>0){start=Math.min(start,d);end=Math.min(end,d);if(end<=start){showStatus('وقت البداية وصل لنهاية الفيديو. قلّل وقت البداية.');return null}}
+  return {start,end};
+}
+fileInput.addEventListener('change',()=>{
+  const file=fileInput.files && fileInput.files[0];
+  if(!file)return;
+  if(!file.type.startsWith('video/')){showStatus('الملف المختار مش ظاهر إنه فيديو. اختار فيديو MP4 إن أمكن.');return}
+  if(objectUrl)URL.revokeObjectURL(objectUrl);
+  objectUrl=URL.createObjectURL(file);
+  preview.pause();
+  preview.removeAttribute('src');
+  preview.load();
+  preview.src=objectUrl;
+  preview.load();
+  editor.classList.add('active');
+  showStatus('تم اختيار الفيديو. بنحاول نجهّزه للمعاينة داخل متصفحك؛ انتظر لحظة.');
+  startInput.value=0;
+  endInput.value=15;
+  preview.currentTime=0;
+});
+preview.addEventListener('loadedmetadata',()=>{
+  const d=duration();
+  endInput.value=Math.min(15,d||15);
+  startInput.max=d||0;
+  endInput.max=d||1;
+  showStatus('الفيديو اتجهّز للمعاينة. اضغط تشغيل في مشغّل الفيديو أو «معاينة المقطع المحدد».');
+});
+preview.addEventListener('loadeddata',()=>{playClipButton.disabled=false;});
+preview.addEventListener('error',()=>{
+  const code=preview.error?preview.error.code:0;
+  let message='المتصفح مش قادر يشغّل الملف ده.';
+  if(code===4) message='صيغة الفيديو غير مدعومة على المتصفح. جرّب فيديو MP4 بترميز H.264 والصوت AAC.';
+  else if(code===2) message='حصل خطأ أثناء قراءة الملف. اختار الفيديو من الموبايل مرة تانية.';
+  else if(code===3) message='تعذّر فك ترميز الفيديو. جرّب نسخة MP4 أخرى.';
+  showStatus(message);
+});
+preview.addEventListener('timeupdate',()=>{
+  const r=validRangeSilent();
+  if(clipPlaying&&r&&preview.currentTime>=r.end){preview.pause();clipPlaying=false;preview.currentTime=r.end;playClipButton.textContent='▶ معاينة المقطع المحدد';}
+});
+function validRangeSilent(){
+ const d=duration();let start=Number(startInput.value),end=Number(endInput.value);
+ if(!Number.isFinite(start)||!Number.isFinite(end)||start<0||end<=start)return null;
+ if(d>0){start=Math.min(start,d);end=Math.min(end,d);if(end<=start)return null;}
+ return {start,end};
+}
+playClipButton.addEventListener('click',async()=>{
+ if(!preview.src){showStatus('اختار فيديو من جهازك الأول.');return}
+ const r=validRange();if(!r)return;
+ try{preview.currentTime=r.start;await preview.play();clipPlaying=true;playClipButton.textContent='▶ تشغيل المقطع من جديد';showStatus('بتعاين الجزء المحدد. هيتوقف التشغيل عند وقت النهاية.');}
+ catch(e){showStatus('المتصفح منع التشغيل. اضغط زر التشغيل داخل الفيديو، أو جرّب ملف MP4 آخر.');}
+});
+document.getElementById('jumpStart').addEventListener('click',()=>{if(!preview.src)return;preview.pause();clipPlaying=false;preview.currentTime=Number(startInput.value)||0;playClipButton.textContent='▶ معاينة المقطع المحدد';});
+document.getElementById('pauseVideo').addEventListener('click',()=>{preview.pause();clipPlaying=false;playClipButton.textContent='▶ معاينة المقطع المحدد';});
+document.getElementById('checkUrl').addEventListener('click',()=>{
+ const url=document.getElementById('videoUrl').value.trim();
+ if(!url){showStatus('الصق رابطًا أولًا، أو اختَر ملف فيديو من جهازك.');return}
+ try{new URL(url);showStatus('تم إدخال الرابط. هذه النسخة لا تشغّل أو تستخرج الفيديو من الروابط بعد؛ استخدم رفع ملف تملكه أو لديك إذن باستخدامه.');}
+ catch(e){showStatus('الرابط غير مكتمل. تأكد أنه يبدأ بـ https://')}
+});
+</script>
+</body>
+</html>
